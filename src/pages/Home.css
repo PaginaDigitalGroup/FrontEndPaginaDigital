@@ -1,0 +1,140 @@
+/* src/pages/Home.css */
+
+/* Estilo para a imagem principal */
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
+/* Estilo para o texto abaixo da imagem */
+.text-below-image {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333; /* Cor mais suave */
+}
+
+/* Estilo para o container principal */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo claro para melhor contraste */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do container */
+}
+
+/* Estilo para a tabela */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    color: #555;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para os botões */
+button {
+    text-transform: none; /* Remove o texto maiúsculo dos botões */
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 130px; /* ou qualquer valor que desejar */
+    height: 40px; /* para garantir que a altura também seja consistente */
+    
+}
+
+button.table-action {
+    background-color: #3f51b5;
+    color: white;
+}
+
+button.save {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px); /* Efeito de "subir" ao passar o mouse */
+    opacity: 0.9;
+}
+
+button.table-action:hover {
+    background-color: #303f9f; /* Cor mais escura ao passar o mouse */
+}
+
+button.save:hover {
+    background-color: #388e3c;
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo para os diálogos */
+.MuiDialog-paper {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.MuiDialogTitle-root {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.MuiDialogContent-root {
+    margin-top: 10px;
+}
+
+.MuiDialogActions-root {
+    padding: 16px;
+    justify-content: flex-end;
+}
+
+/* Estilo para campos de texto nos diálogos */
+.MuiTextField-root {
+    margin-bottom: 16px;
+}
+
+.MuiButton-containedPrimary {
+    background-color: #3f51b5;
+}
+
+.MuiButton-containedSecondary {
+    background-color: #f44336;
+}

@@ -1,0 +1,16 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #333; /* Cor de fundo igual ao da Navbar */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+  
+  .footer-text {
+    color: white; /* Cor do texto */
+    margin: 0;
+    font-size: 16px;
+  }
+  
