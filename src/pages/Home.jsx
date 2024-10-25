@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Typography, TextField, Grid, Button, Dialog, DialogActions, DialogContent, DialogTitle, Menu, MenuItem } from '@mui/material';
 import './Home.css';
+import ImageCarousel from './ImageCarousel';
 import imagemPrincipal from '../assets/livrostemplate.jpg';
+
 
 function Home() {
     const [livros, setLivros] = useState([]);
@@ -108,20 +110,38 @@ function Home() {
 
     const handleEditLivro = async () => {
         try {
+            console.log(selectedItem);
+            
+            // Cria um novo objeto para o livro atualizado, mantendo os valores não editados
             const updatedLivro = {
                 id: selectedItem.id,
-                titulo: formLivro.titulo,
-                descricao: formLivro.descricao
+                titulo: formLivro.titulo || selectedItem.titulo, // Se formLivro.titulo estiver vazio, mantenha o título atual
+                editora: selectedItem.editora, // Mantém o valor atual
+                numeroPaginas: selectedItem.numeroPaginas, // Mantém o valor atual
+                descricao: formLivro.descricao || selectedItem.descricao, // Se formLivro.descricao estiver vazio, mantenha a descrição atual
+                genero: selectedItem.genero, // Mantém o valor atual
+                situacao: selectedItem.situacao, // Mantém o valor atual
+                autor: {
+                    id: selectedItem.autor.id, // Mantém o ID do autor
+                    nome: selectedItem.autor.nome, // Mantém o nome do autor
+                    descricao: selectedItem.autor.descricao // Mantém a descrição do autor
+                },
+                foto: selectedItem.foto // Mantém o valor atual
             };
-
+    
+            console.log(updatedLivro);
             await axios.put('http://localhost:8080/livros', updatedLivro);
             alert("Livro atualizado com sucesso.");
+            
+            // Atualiza a lista de livros na interface do usuário
             setLivros(livros.map(l => (l.id === selectedItem.id ? updatedLivro : l)));
-            setIsEditing(false);
+            handleCloseDialog(); // Fechar o diálogo após a edição
         } catch (error) {
             alert("Erro ao atualizar livro.");
+            console.error(error); // Para ver mais detalhes sobre o erro
         }
     };
+    
 
     const handleDeleteLivro = async () => {
         try {
@@ -157,8 +177,9 @@ function Home() {
 
     return (
         <>
+            {/* Usando o componente ImageCarousel */}
             <Box className="image-container">
-                <img src={imagemPrincipal} alt="Biblioteca" />
+                <ImageCarousel/>
             </Box>
 
             <Box className="text-below-image">
