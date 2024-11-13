@@ -4,6 +4,7 @@ import { Box, Typography, TextField, Grid, Button, Dialog, DialogActions, Dialog
 import './Home.css';
 import ImageCarousel from './ImageCarousel';
 import imagemPrincipal from '../assets/livrostemplate.jpg';
+import { useAuth } from '../AuthContext';
 
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
     const [formLivro, setFormLivro] = useState({ titulo: "", descricao: "" });
     const [anchorEl, setAnchorEl] = useState(null);
     const [filteredLivros, setFilteredLivros] = useState([]);
+    const { user } = useAuth();
     const openMenu = Boolean(anchorEl);
 
     useEffect(() => {
@@ -184,7 +186,7 @@ function Home() {
 
             <Box className="text-below-image">
                 <Typography variant="h5">
-                    Bem Vindo! O que deseja ler hoje?
+                    Bem Vindo {user ? user.nome : 'Visitante'}! O que deseja ler hoje?
                 </Typography>
             </Box>
 

@@ -1,30 +1,58 @@
-/* src/components/Navbar.css */
+/* Navbar.css */
 .navbar {
-    background-color: #333; /* Cor de fundo da barra de navegação */
-    padding: 10px 20px;
-  }
-  
-  .navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around; /* Distribui os itens uniformemente */
-  }
-  
-  .navbar-item {
-    margin: 0;
-  }
-  
-  .navbar-link {
-    color: white; /* Cor do texto */
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-  
-  .navbar-link:hover {
-    background-color: #555; /* Cor de fundo ao passar o mouse */
-    border-radius: 5px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha itens verticalmente */
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-item button {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-item button:hover {
+  text-decoration: underline;
+}
+
+/* Estilo da foto do usuário */
+.user-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+/* Placeholder caso não haja foto */
+.user-photo-placeholder {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+/* Espaço adicional entre a foto do usuário e o botão de logout */
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Define um espaço entre a foto e o botão */
+}
